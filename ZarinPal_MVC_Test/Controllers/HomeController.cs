@@ -78,6 +78,7 @@ namespace ZarinPal_MVC_Test.Controllers
                 //اگر وضعیت پرداخت اوکی بود
                 if (Request.QueryString["Status"].ToString().Equals("OK"))
                 {
+                    //jame tamame maghadir onja save hastesh
                     int Amount = order.Sum;
                     long RefID;
                     System.Net.ServicePointManager.Expect100Continue = false;
