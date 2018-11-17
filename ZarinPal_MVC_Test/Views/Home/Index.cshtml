@@ -1,0 +1,22 @@
+﻿@using ZarinPal_MVC_Test.Models;
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron" dir="rtl">
+    <h1> mstop.ir</h1>
+    <p class="lead">وب سایت ام اس تاپ در بهار 1397 شروع به کار کرد. ام اس تاپ یک روش کاملا متفاوت در زمینه یادگیری و آموزش بوده تا بتواند برای کسب و کار, توسعه و نگهداری نرم افزار, فناوری های جدید و مهارت های خلاقانه ای که شما به دنبال آن هستید را به صورت حرفه ای آموزش ببینید.</p>
+</div>
+
+<div class="row">
+    @foreach (Product item in Model)
+    {
+        <div class="col-md-3 col-xs-6 text-center">
+            <img src="/ImageProducts/@item.ImageName" style="height:200px" class="img-responsive" alt="Alternate Text" />
+            <h3>@item.Title</h3>
+            <p class="text-center text-success">@item.Price.ToString("#,0") تومان</p>
+            <p><a class="btn btn-success btn-block" href="@Url.Action("FinalPayment","Home",new { id=item.ProductID})" role="button">خرید آنلاین</a></p>
+        </div>
+    }
+
+</div>
